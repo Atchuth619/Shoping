@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormInput from '../FormInput/formInput';
+import CustomButton from '../Custom-Button/customButton';
 
 class Login extends Component {
   constructor(props) {
@@ -22,6 +23,9 @@ class Login extends Component {
   render() {
     const { email, password } = this.state;
       return (
+          <>
+          <h2>I already have an account</h2>
+          <span>Sign in with your email and password</span>
         <form onSubmit={this.handleSave}>
           <FormInput 
             name="email"
@@ -39,8 +43,9 @@ class Login extends Component {
             handleChange={this.handleChange}
             required 
           />
-            <button> Save</button>
+            <CustomButton type='submit'> Sign in</CustomButton>
         </form>
+        </>
       )
   }
 }
